@@ -6,7 +6,7 @@ import pickle
 import settings
 
 #loaded_model=pickle.load(open('C:/Users/MY PC/Desktop/yolov8/yolov8-streamlit-detection-tracking/weights/yolov8.pkl', 'rb'))
-with open('c:/Users/MY PC/Downloads/yolov8 (1).pkl', 'rb') as file:
+with open('/workspaces/Waste-Classification-using-YOLOv8/streamlit-detection-tracking - app/weights/yolov8 (1).pkl', 'rb') as file:
     model1= pickle.load(file)
 
 
@@ -21,7 +21,7 @@ def load_model(model_path):
     Returns:
         A YOLO object detection model.
     """
-    model = YOLO('C:/Users/MY PC/Desktop/yolov8/yolov8-streamlit-detection-tracking/weights/yoloooo.pt')
+    model = YOLO('/workspaces/Waste-Classification-using-YOLOv8/streamlit-detection-tracking - app/weights/yoloooo.pt')
     return model
 
 
@@ -82,7 +82,7 @@ def play_youtube_video(conf, model):
     Raises:
         None
     """
-    source_youtube = st.sidebar.text_input("YouTube Video url")
+    source_youtube = st.sidebar.text_input("https://www.youtube.com/watch?v=YrHsw4Oja7w")
 
     is_display_tracker, tracker = display_tracker_options()
 
@@ -160,7 +160,7 @@ def play_webcam(conf, model):
     Raises:
         None
     """
-    source_webcam = settings.WEBCAM_PATH
+    source_webcam = 0
     is_display_tracker, tracker = display_tracker_options()
     if st.sidebar.button('Detect Trash'):
         try:
